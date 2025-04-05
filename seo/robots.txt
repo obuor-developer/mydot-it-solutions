@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mydotitsolutions.com/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /includes/
+Disallow: /cgi-bin/

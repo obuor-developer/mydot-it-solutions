@@ -1,0 +1,139 @@
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes rotateText {
+    0%, 16% { transform: translateY(0); }
+    20%, 36% { transform: translateY(-50px); }
+    40%, 56% { transform: translateY(-100px); }
+    60%, 76% { transform: translateY(-150px); }
+    80%, 96% { transform: translateY(-200px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Animation Classes */
+.hero h1 {
+    animation: fadeInUp 1s ease;
+}
+
+.hero p {
+    animation: fadeInUp 1s ease 0.2s;
+    animation-fill-mode: both;
+}
+
+.hero-btns {
+    animation: fadeInUp 1s ease 0.4s;
+    animation-fill-mode: both;
+}
+
+.slide {
+    animation: fadeInScale 0.5s ease forwards;
+}
+
+.highlight-text {
+    animation: gradientShift 3s ease infinite;
+}
+
+.text-rotation {
+    animation: rotateText 10s ease infinite;
+}
+
+.floating-element {
+    animation: float 15s linear infinite;
+}
+
+/* Animation for scroll-triggered elements */
+.animate {
+    opacity: 1 !important;
+}
+
+.section-title.animate {
+    transform: translateY(0);
+}
+
+.service-card.animate {
+    transform: translateY(0);
+}
+
+.vision.animate, .mission.animate {
+    transform: translateY(0);
+}
+
+.client-logo.animate {
+    transform: scale(1);
+}
+
+/* Initial states for scroll animations */
+.section-title {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.service-card {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.vision, .mission {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.client-logo {
+    opacity: 0;
+    transform: scale(0.9);
+}
