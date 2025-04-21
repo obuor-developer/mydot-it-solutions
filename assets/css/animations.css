@@ -1,4 +1,6 @@
 /* Animations */
+
+/* Fade In Up Animation */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -10,6 +12,7 @@
     }
 }
 
+/* Fade In Scale Animation */
 @keyframes fadeInScale {
     from {
         opacity: 0;
@@ -21,6 +24,7 @@
     }
 }
 
+/* Fade In Left Animation */
 @keyframes fadeInLeft {
     from {
         opacity: 0;
@@ -32,6 +36,7 @@
     }
 }
 
+/* Fade In Right Animation */
 @keyframes fadeInRight {
     from {
         opacity: 0;
@@ -43,6 +48,7 @@
     }
 }
 
+/* Text Rotation Animation */
 @keyframes rotateText {
     0%, 16% { transform: translateY(0); }
     20%, 36% { transform: translateY(-50px); }
@@ -52,17 +58,39 @@
     100% { transform: translateY(0); }
 }
 
+/* Gradient Shift Animation */
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
+/* Float Animation */
 @keyframes float {
     0% { transform: translateY(0) rotate(0deg); opacity: 0; }
     10% { opacity: 1; }
     90% { opacity: 1; }
     100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+/* Slide In Animation */
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
 }
 
 /* Animation Classes */
@@ -85,6 +113,7 @@
 }
 
 .highlight-text {
+    background-size: 200% 200%;
     animation: gradientShift 3s ease infinite;
 }
 
@@ -96,44 +125,73 @@
     animation: float 15s linear infinite;
 }
 
+.service-card:hover, 
+.featured-service:hover, 
+.reason-card:hover,
+.team-member:hover,
+.vision:hover, 
+.mission:hover,
+.client-logo:hover {
+    animation: pulse 0.3s ease;
+}
+
+.btn:hover {
+    animation: bounce 0.5s ease;
+}
+
 /* Animation for scroll-triggered elements */
-.animate {
-    opacity: 1 !important;
+.animate-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.section-title.animate {
+.animate-fade-up.animate {
+    opacity: 1;
     transform: translateY(0);
 }
 
-.service-card.animate {
-    transform: translateY(0);
+.animate-fade-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.vision.animate, .mission.animate {
-    transform: translateY(0);
+.animate-fade-left.animate {
+    opacity: 1;
+    transform: translateX(0);
 }
 
-.client-logo.animate {
+.animate-fade-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-fade-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-scale.animate {
+    opacity: 1;
     transform: scale(1);
 }
 
-/* Initial states for scroll animations */
-.section-title {
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.service-card {
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.vision, .mission {
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.client-logo {
-    opacity: 0;
-    transform: scale(0.9);
-}
+/* Staggered animations */
+.stagger-item:nth-child(1) { transition-delay: 0.1s; }
+.stagger-item:nth-child(2) { transition-delay: 0.2s; }
+.stagger-item:nth-child(3) { transition-delay: 0.3s; }
+.stagger-item:nth-child(4) { transition-delay: 0.4s; }
+.stagger-item:nth-child(5) { transition-delay: 0.5s; }
+.stagger-item:nth-child(6) { transition-delay: 0.6s; }
+.stagger-item:nth-child(7) { transition-delay: 0.7s; }
+.stagger-item:nth-child(8) { transition-delay: 0.8s; }
+.stagger-item:nth-child(9) { transition-delay: 0.9s; }
+.stagger-item:nth-child(10) { transition-delay: 1s; }
